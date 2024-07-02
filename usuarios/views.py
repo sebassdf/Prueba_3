@@ -9,6 +9,11 @@ def index(request):
     context={"usuarios":usuarios}
     return render (request, 'usuarios/index.html', context)
 
+def crud(request):
+    usuarios= Usuario.objects.all()
+    context={"usuarios":usuarios}
+    return render (request, 'usuarios/index.html', context)
+
 
 
 

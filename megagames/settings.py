@@ -39,6 +39,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'usuarios',
     'juegos',
+    'administrador',
 ]
 
 MIDDLEWARE = [
@@ -68,6 +69,9 @@ TEMPLATES = [
         },
     },
 ]
+
+LOGIN_REDIRECT_URL = "menu"
+LOGIN_REDIRECT_URL = "home"
 
 WSGI_APPLICATION = 'megagames.wsgi.application'
 
