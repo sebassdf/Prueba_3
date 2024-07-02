@@ -21,6 +21,7 @@ urlpatterns = [
     path('usuarios/', include('usuarios.urls')),
     path('juegos/', include('juegos.urls')),
     path('administrador/', include('administrador.urls')),
+    path('home/', views.home , name='home'),
 
     path('accounts/', include('django.contrib.aunth.urls')),
 ]

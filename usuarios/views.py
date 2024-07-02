@@ -1,7 +1,7 @@
 from django.shortcuts import render
 
 from .models import Usuario
-
+from .views import Usuario
 # Create your views here.
 
 def index(request):
@@ -14,7 +14,8 @@ def crud(request):
     context={"usuarios":usuarios}
     return render (request, 'usuarios/index.html', context)
 
-
-
+def home (request):
+    context = {}
+    return render(request, 'administrador/home.html', context)
 
 
