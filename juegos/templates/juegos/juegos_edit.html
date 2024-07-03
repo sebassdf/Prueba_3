@@ -9,5 +9,29 @@
     
     <h1>juegos_edit</h1>
 
+    <div style="text-align: center;">
+        {% if juego %}
+        <h2>Formulario CRUD para juegos</h2><br>
+        <form action="{% url 'juegosUpdate' %}" method="POST">
+            {% csrf_token %}
+
+            <pre>id:  <input type="text"name="id" value="{{juego.id}}"> </pre>
+            <pre>Nombre:  <input type="text"name="nombre" value="{{juego.nombre}}"> </pre>
+            <pre>precio :  <input type="text"name=" precio " value="{{juego.precio }}"> </pre>
+            <pre>Descripcion:  <input type="text"name="Descripcion" value="{{juego.Descripcion}}"> </pre>
+            <pre>id_categoria:  <input type="text"name="id_categoria" value="{{juego.id_categoria}}"> </pre>
+            </select>
+            </pre>
+            <input type="submit" name="opcion" value="Actualizar">
+        </form><br><br>
+        {% endif %}
+        <a href="{% url 'crud' %}">Volver</a>
+        <br>
+        <div id="idMensajes">
+            {% if mensaje %}
+                {{mensaje}}
+            {% endif %}
+        </div>
+    </div>
 </body>
 </html>

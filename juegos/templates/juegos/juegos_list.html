@@ -8,6 +8,42 @@
 <body>
     
     <h1>juegos_list</h1>
+    <br>
+
+    <button type="button">
+        <a href="{% url 'juegosAdd' %}"> Agregar </a>
+    </button>
+
+    <div id="idMensajes">
+        {% if mensaje %}
+            {{mensaje}}
+        {% endif %}
+    </div>
+    <table>
+        {% if juegos %}
+            <th>id</th>
+            <th>Nombre</th>
+            <th>precio</th>
+            <th>descripcion</th>
+            <th>id_categoria</th>
+            <th>stock</th>
+            {% for juego in juegos %}
+                <tr>
+                    <td>{{juego.id}}</td>
+                    <td>{{juego.nombre}}</td>
+                    <td>{{juego.precio}}</td>
+                    <td><a href="{% url 'juegos_del' pk=juego.id %}">Eliminar</a></td>
+                    <td><a href="{% url 'juegos_findEdit' pk=juego.id %}">Modificar</a></td>
+                </tr>
+            {% endfor %}
+        {% endif %}
+    </table>
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
+<script>
+    $(document).ready(function(){
+        $("#idMensajes").delay(2000).fadeOut("slow");
+    });
+</script>
 
 </body>
 </html>
